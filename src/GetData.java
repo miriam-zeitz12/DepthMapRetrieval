@@ -90,7 +90,9 @@ public class GetData
 
     public static void main(String[] args) throws Exception
     {
-        String data = findDepthData(new File("IMG_20150116_14319.jpg"));
+        long startTime = System.nanoTime();
+        String data = findDepthData(new File("IMG_20150116_143419.jpg"));
+        System.out.println("Finding data took: " + ((System.nanoTime() - startTime)*1000000000) + " ns");
         if(data != null)
         {
             byte[] imgData = Base64.decode(data.getBytes());
